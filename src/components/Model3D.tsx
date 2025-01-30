@@ -23,17 +23,12 @@ export function Model3D({ url, scale = 1, position = [0, 0, 0], onError }: Model
     };
     
     loadModel();
-    
-    return () => {
-      useGLTF.dispose(url);
-    };
   }, [url, onError]);
 
   const { scene } = useGLTF(url);
 
-  useFrame((state) => {
+  useFrame(() => {
     if (mesh.current) {
-      // Rotation plus lente et plus naturelle
       mesh.current.rotation.y += 0.005;
     }
   });

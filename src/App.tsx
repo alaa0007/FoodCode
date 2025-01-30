@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ModelCard } from './components/ModelCard';
 import { ARView } from './components/ARView';
 
 const LANTERN_MODEL = {
   id: 1,
   title: 'Lanterne Traditionnelle',
-  imageUrl: 'https://images.unsplash.com/photo-1603826773137-0c3e4d0c0055?auto=format&fit=crop&q=80',
-  modelUrl: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Lantern/glTF-Binary/Lantern.glb'
+  imageUrl: 'src/assets/images/lantern.jpg',
+  modelUrl: 'src/assets/models/lantern.glb',
 };
 
 function App() {
@@ -38,6 +38,7 @@ function App() {
           modelUrl={selectedModel} 
           onError={(e) => {
             setError("Erreur lors du chargement du modèle 3D. Veuillez réessayer.");
+            console.log(e);
             setSelectedModel(null);
           }}
         />

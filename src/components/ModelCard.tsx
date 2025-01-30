@@ -1,4 +1,5 @@
-import { View } from 'lucide-react';
+import { Camera } from 'lucide-react';
+
 
 interface ModelCardProps {
   title: string;
@@ -20,7 +21,7 @@ export function ModelCard({ title, imageUrl, onClick }: ModelCardProps) {
       <div className="p-4">
         <h3 className="text-lg font-semibold mb-2">{title}</h3>
         <button className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors">
-          <View size={20} />
+          <Camera size={20} />
           Voir en AR
         </button>
       </div>
